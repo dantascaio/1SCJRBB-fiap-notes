@@ -30,6 +30,23 @@ article .material-icons:hover {
   transform: rotate(360deg);
 }
 
+article .material {
+  font-family: 'Material Icons';
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+
+  font-size: 32px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+article .material:hover {
+  color: #333;
+  transform: scale(1.1);
+  transform: rotate(360deg);
+}
+
 #priority {
   position: absolute;
   bottom: 5px;

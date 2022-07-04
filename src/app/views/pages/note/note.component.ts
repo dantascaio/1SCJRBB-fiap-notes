@@ -24,9 +24,16 @@ export class NoteComponent implements OnInit {
   @Output()
   notify = new EventEmitter();
 
+  @Output()
+  notifyEditionToList = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  editNote(){
+      this.notifyEditionToList.emit(this.noteProp);
   }
 
   confirmRemove(){

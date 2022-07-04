@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Note } from 'src/app/services/@types/note';
 import { NoteService } from 'src/app/services/note.service';
@@ -13,6 +13,9 @@ export class ListNotesComponent implements OnInit {
   notes = [] as Note[];
 
   subscription: Subscription;
+
+  @Output()
+  notifyEditionToHome = new EventEmitter();
 
   //injetando a dependência do service
   constructor(private noteService: NoteService) {
@@ -42,5 +45,9 @@ export class ListNotesComponent implements OnInit {
     this.noteService.removeNote(noteId).subscribe(
       () => this.notes = this.notes.filter(note => note.id !== noteId)
     );
+  }
+
+  notifyEditionToUp(note: Note){
+    this.notifyEditionToHome.emit(note);
   }
 }

@@ -60,4 +60,9 @@ export class NoteService {
     return this.http.post<Note>(`${this.apiUrl}/notes`, {text: textNote});
   }
   
+  editNote(note: Note){
+    return this.http.put(`${this.apiUrl}/notes/${note.id}`, note);
+  }
+
+
 }

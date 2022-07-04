@@ -9,6 +9,7 @@ import { ListNotesComponent } from './views/pages/list-notes/list-notes.componen
 import { NoteComponent } from './views/pages/note/note.component';
 import { HomeComponent } from './views/pages/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './views/pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListNotesComponent,
     NoteComponent,
     HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

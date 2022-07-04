@@ -29,7 +29,10 @@ export class FormNoteComponent implements OnInit {
     if(this.checkoutForm.valid){  
       this.noteService.postNotes(this.checkoutForm.value.textNote)
         .subscribe(
-          () => this.checkoutForm.reset()
+          (note) => {
+            this.checkoutForm.reset();
+            this.noteService.notifyNewNoteAdded(note);
+          }
         );
     }
   }
